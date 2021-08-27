@@ -1,0 +1,31 @@
+﻿@model IEnumerable<ModelsTurnin.Models.hm>
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    body {
+        background-image: url('../../Images/swzsxvl1.bmp');
+        color:crimson;
+    }
+</style>
+
+<h2>Search Page</h2>
+<p>Enter the your desired query into the text box and hit submit to search.</p>
+<form action="/searchbar/"  method="post">
+    <textarea placeholder="Search Bar" name="SearchBox" cols="10" rows="1"></textarea>
+    <button type="submit">Submit</button>
+    <ol>
+      @if(ViewBag.Count>0)
+      {
+          <h7>Your results are:</h7>
+          foreach(var item in Model)
+          {
+              <li>@item.title</li>
+          }
+      }
+    </ol>
+</form>
+
+
+
